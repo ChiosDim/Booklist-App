@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import './index.css';
+
+
 const BookList = () => {
   return (
-    <section>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
       <Book />
     </section>
   );
@@ -11,7 +17,7 @@ const BookList = () => {
 
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <Image />
       <Title />
       <Author />
@@ -19,10 +25,24 @@ const Book = () => {
   );
 };
 
-const Image = () => <h2>image placeholder</h2>;
-const Title = () => <h2>Book Title</h2>;
+const Image = () => (
+  <img
+    src="./images/book1.jpg"
+    alt="Ms. Rachel and the Special Surprise: Encouraging Speech and Learning Through Play and Music"
+  />
+);
+const Title = () => (
+  <h2>
+    Ms. Rachel and the Special Surprise: Encouraging Speech and Learning Through
+    Play and Music
+  </h2>
+);
 const Author = () => {
-  return <h4>Author</h4>;
+  return (
+    <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.5rem" }}>
+      Ms. Rachel{" "}
+    </h4>
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
