@@ -1,47 +1,43 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import './index.css';
+import "./index.css";
 
+const firstBook = {
+  author: "Ms. Rachel",
+  title:
+    "Ms. Rachel and the Special Surprise: Encouraging Speech and Learning Through Play and Music",
+  img: "./images/book1.jpg",
+};
+const secondBook = {
+  author: "Kristin Hannah",
+  title: "The Women: A Novel",
+  img: "./images/book2.jpg",
+};
 
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      />
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+      />
     </section>
   );
 };
-
-const Book = () => {
+const Book = (props) => {
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={props.img} alt={props.title} />
+      <h2>{props.title}</h2>
+      <h4>{props.author}</h4>
     </article>
-  );
-};
-
-const Image = () => (
-  <img
-    src="./images/book1.jpg"
-    alt="Ms. Rachel and the Special Surprise: Encouraging Speech and Learning Through Play and Music"
-  />
-);
-const Title = () => (
-  <h2>
-    Ms. Rachel and the Special Surprise: Encouraging Speech and Learning Through
-    Play and Music
-  </h2>
-);
-const Author = () => {
-  return (
-    <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.5rem" }}>
-      Ms. Rachel{" "}
-    </h4>
   );
 };
 
